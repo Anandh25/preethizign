@@ -28,13 +28,16 @@ const CustomOrders = () => {
             </p>
           </div>
 
-          <div className="mt-10 flex justify-center">
+          <div className="mt-10 flex justify-center bg-black text-white rounded-2xl hover:cursor-pointer">
             <a
               href="https://wa.me/917845002957"
               target="_blank"
               rel="noreferrer"
+              className="bg-black text-white rounded-2xl hover:cursor-pointer"
             >
-              <Button>Order Via WhatsApp</Button>
+              <Button className="bg-black text-white rounded-2xl hover:cursor-pointer">
+                Order Via WhatsApp
+              </Button>
             </a>
           </div>
         </div>

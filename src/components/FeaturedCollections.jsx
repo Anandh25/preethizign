@@ -9,7 +9,7 @@ import Container from "./layout/Container";
 
 const FeaturedCollections = () => {
   return (
-    <section className="py-24 border-t border-[#e8dfd5]">
+    <section className="py-24 border-t border-[#e8dfd5]" id="collections">
       <Container>
         <SectionTitle
           subtitle="Curated Collections"

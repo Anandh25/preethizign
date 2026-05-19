@@ -1,7 +1,7 @@
 import Home from "./Home";
 
 import FeaturedCollections from "../components/FeaturedCollections";
-import AboutBrand from "../components/AboutBrand";
+// import AboutBrand from "../components/AboutBrand";
 import CustomOrders from "../components/CustomOrders";
 import Testimonials from "../components/Testimonials";
 import ProductsShowcase from "../components/ProductsShowcase";
@@ -11,7 +11,7 @@ const HomePage = () => {
     <>
       <Home />
       <FeaturedCollections />
-      <AboutBrand />
+      {/* <AboutBrand /> */}
       <CustomOrders />
       <Testimonials />
       <ProductsShowcase />

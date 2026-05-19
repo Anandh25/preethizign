@@ -22,7 +22,11 @@ const Home = () => {
             </p>
 
             <div className="mt-10 flex items-center gap-6">
-              <Button>Explore Collection</Button>
+              <a href="#collections">
+                <Button className="bg-black text-white rounded-xl hover:cursor-pointer">
+                  Explore Collection
+                </Button>
+              </a>
             </div>
           </div>
 
