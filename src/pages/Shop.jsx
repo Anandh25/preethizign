@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import Container from "../components/layout/Container";
 import ProductCard from "../components/common/ProductCard";
@@ -8,8 +9,21 @@ import { products } from "../data/products";
 const categories = ["All", "Keychains", "Desk Buddies", "Refrigerator Magnets"];
 
 const Shop = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchParams] = useSearchParams();
+
+  const categoryFromURL = searchParams.get("category");
+
+  const [selectedCategory, setSelectedCategory] = useState(
+    categoryFromURL || "All",
+  );
+
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    if (categoryFromURL) {
+      setSelectedCategory(categoryFromURL);
+    }
+  }, [categoryFromURL]);
 
   const filteredProducts = products.filter((product) => {
     const matchesCategory =
@@ -35,6 +49,8 @@ const Shop = () => {
             Explore Handmade Clay Creations
           </h1>
         </div>
+
+        {/* Search */}
         <div className="mb-10">
           <input
             type="text"
@@ -44,6 +60,7 @@ const Shop = () => {
             className="w-full border border-[#e8dfd5] bg-transparent px-6 py-4 outline-none rounded-full placeholder:text-gray-400"
           />
         </div>
+
         {/* Categories */}
         <div className="flex flex-wrap gap-4 mb-14">
           {categories.map((category) => (
@@ -52,11 +69,11 @@ const Shop = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 border uppercase tracking-[3px] text-sm transition duration-300 rounded-full
 
-                ${
-                  selectedCategory === category
-                    ? "bg-black text-white border-black"
-                    : "border-[#e8dfd5] hover:border-black"
-                }`}
+              ${
+                selectedCategory === category
+                  ? "bg-black text-white border-black"
+                  : "border-[#e8dfd5] hover:border-black"
+              }`}
             >
               {category}
             </button>

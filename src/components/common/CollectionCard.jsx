@@ -1,11 +1,16 @@
-const CollectionCard = ({ image, title }) => {
+import { Link } from "react-router-dom";
+
+const CollectionCard = ({ image, title, category }) => {
   return (
-    <div className="group cursor-pointer">
+    <Link
+      to={`/shop?category=${encodeURIComponent(category)}`}
+      className="group block cursor-pointer"
+    >
       <div className="overflow-hidden rounded-xl">
         <img
           src={image}
           alt={title}
-          className="w-full h-[500px] object-cover rounded-xl group-hover:scale-105 transition duration-700"
+          className="w-full aspect-[4/5] object-cover rounded-xl group-hover:scale-105 transition duration-700"
         />
       </div>
 
@@ -16,7 +21,7 @@ const CollectionCard = ({ image, title }) => {
           Explore Collection
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 
