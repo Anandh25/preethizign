@@ -1,5 +1,5 @@
 import Container from "../components/layout/Container";
-import heroImage from "../assets/images/dog-keychain.jpeg";
+import heroImage from "../assets/images/bouquet-refrigerator-magnet.jpeg";
 
 import Button from "../components/common/Button";
 import SectionTitle from "../components/common/SectionTitle";

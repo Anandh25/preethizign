@@ -141,7 +141,7 @@ const Contact = () => {
                     return;
                   }
 
-                  const whatsappMessage = `Hi ClayAura ✨
+                  const whatsappMessage = `Hi Preeth!Zign ✨
 
 I'm interested in a custom order.
 

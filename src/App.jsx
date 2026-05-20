@@ -4,8 +4,8 @@ import MainLayout from "./layouts/MainLayout";
 
 import HomePage from "./pages/HomePage";
 import Shop from "./pages/Shop";
-import About from "../src/pages/About";
-import Contact from "../src/pages/Contact";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 import ProductDetails from "./pages/ProductDetails";
 
@@ -16,31 +16,121 @@ import Returns from "./pages/Returns";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+
+import ProtectedRoute from "./components/admin/ProtectedRoute";
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
-    <MainLayout>
+    <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        {/* CUSTOMER ROUTES */}
+        <Route
+          path="/"
+          element={
+            <MainLayout>
+              <HomePage />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/shop"
+          element={
+            <MainLayout>
+              <Shop />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/about"
+          element={
+            <MainLayout>
+              <About />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/contact"
+          element={
+            <MainLayout>
+              <Contact />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route
+          path="/product/:id"
+          element={
+            <MainLayout>
+              <ProductDetails />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/shipping" element={<Shipping />} />
+        <Route
+          path="/shipping"
+          element={
+            <MainLayout>
+              <Shipping />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/returns" element={<Returns />} />
+        <Route
+          path="/returns"
+          element={
+            <MainLayout>
+              <Returns />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/privacy" element={<Privacy />} />
+        <Route
+          path="/privacy"
+          element={
+            <MainLayout>
+              <Privacy />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
 
-        <Route path="/terms" element={<Terms />} />
+        <Route
+          path="/terms"
+          element={
+            <MainLayout>
+              <Terms />
+              <FloatingWhatsApp />
+            </MainLayout>
+          }
+        />
+
+        {/* ADMIN ROUTES */}
+
+        <Route path="/admin/login" element={<AdminLogin />} />
+
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
-
-      <FloatingWhatsApp />
-    </MainLayout>
+      <Toaster position="top-right" />
+    </>
   );
 }
 

@@ -6,7 +6,7 @@ const About = () => {
       <Container>
         <div className="max-w-4xl">
           <p className="uppercase tracking-[4px] text-sm text-[#b59b82] mb-5">
-            About ClayAura
+            About Preeth!Zign✨
           </p>
 
           <h1 className="text-5xl lg:text-7xl leading-tight mb-10">
@@ -15,7 +15,7 @@ const About = () => {
 
           <div className="space-y-8 text-lg leading-loose text-[#4d5b73]">
             <p>
-              Hey this is pReEtH!, I’m a software engineer turned passionate
+              Hey this is Preeth!, I’m a software engineer turned passionate
               clay artist, combining creativity with attention to detail to
               create handmade clay collectibles and decor.
             </p>

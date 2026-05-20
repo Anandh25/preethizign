@@ -4,7 +4,8 @@ import { useSearchParams } from "react-router-dom";
 import Container from "../components/layout/Container";
 import ProductCard from "../components/common/ProductCard";
 
-import { products } from "../data/products";
+// import { products } from "../data/products";
+import { getProducts } from "../services/firebase/products";
 
 const categories = ["All", "Keychains", "Desk Buddies", "Refrigerator Magnets"];
 
@@ -19,11 +20,23 @@ const Shop = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
 
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
     if (categoryFromURL) {
       setSelectedCategory(categoryFromURL);
     }
   }, [categoryFromURL]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const data = await getProducts();
+
+      setProducts(data);
+    };
+
+    fetchProducts();
+  }, []);
 
   const filteredProducts = products.filter((product) => {
     const matchesCategory =

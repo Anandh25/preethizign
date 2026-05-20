@@ -39,7 +39,7 @@ const products = [
     image: img3,
     category: "Desk Buddies",
     description:
-      "Cute duck clay keychain crafted carefully with vibrant colors and glossy finish.",
+      "Adorable puppy desk buddy handcrafted with premium clay and detailed finishing. A perfect mini companion to brighten your workspace, shelves, or gifting moments.",
   },
 
   {

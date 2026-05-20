@@ -19,7 +19,7 @@ const Footer = () => {
         >
           {/* LEFT */}
           <p className="text-sm text-gray-500 text-center md:text-left">
-            © 2026 ClayAura. Handmade with love ✨
+            © 2026 Preeth!Zign. Handmade with love ✨
           </p>
 
           {/* RIGHT */}

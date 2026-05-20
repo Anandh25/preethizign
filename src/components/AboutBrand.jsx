@@ -28,7 +28,7 @@ const AboutBrand = () => {
 
             <div className="space-y-6 text-gray-600 leading-9 text-lg">
               <p>
-                Hey this is pReEtH! , I’m a software engineer turned passionate
+                Hey this is Preeth! , I’m a software engineer turned passionate
                 clay artist, combining creativity with attention to detail to
                 create handmade clay collectibles and decor.
               </p>
