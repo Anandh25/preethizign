@@ -1,44 +1,24 @@
 import Container from "./layout/Container";
-import Button from "./common/Button";
-
-import img1 from "../assets/images/cozy-kitty-desk-buddy.jpeg";
-import img2 from "../assets/images/bear-keychain.jpeg";
-import img3 from "../assets/images/cute-puppy-desk-buddy.jpeg";
-import img4 from "../assets/images/dora-keychain.jpeg";
 
 import { Link } from "react-router-dom";
 
-const products = [
-  {
-    id: 1,
-    image: img1,
-    title: "Cozy Kitty with Chicken Piece",
-    price: "₹199",
-  },
+import { useEffect, useState } from "react";
 
-  {
-    id: 2,
-    image: img2,
-    title: "Pookie Bear with Ice Cream",
-    price: "₹299",
-  },
-
-  {
-    id: 3,
-    image: img3,
-    title: "Cute Puppy with Waffle",
-    price: "₹199",
-  },
-
-  {
-    id: 4,
-    image: img4,
-    title: "Doremon with Dorayaki",
-    price: "₹399",
-  },
-];
+import { getProducts } from "../services/firebase/products";
 
 const ProductsShowcase = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const data = await getProducts();
+
+      setProducts(data.slice(0, 4));
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <section className="py-14 sm:py-20 border-t border-[#e8dfd5]">
       <Container>
@@ -57,7 +37,6 @@ const ProductsShowcase = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {products.map((product) => (
             <div key={product.id} className="group">
-              {/* CLICKABLE AREA */}
               <Link to={`/product/${product.id}`}>
                 {/* Image */}
                 <div className="overflow-hidden rounded-xl">
@@ -65,15 +44,15 @@ const ProductsShowcase = () => {
                     src={product.image}
                     alt={product.title}
                     className="
-w-full
-aspect-[4/5]
-object-cover
-rounded-2xl
-group-hover:scale-105
-transition
-duration-700
-cursor-pointer
-"
+                      w-full
+                      aspect-[4/5]
+                      object-cover
+                      rounded-2xl
+                      group-hover:scale-105
+                      transition
+                      duration-700
+                      cursor-pointer
+                    "
                   />
                 </div>
 
@@ -95,7 +74,9 @@ cursor-pointer
                       {product.title}
                     </h3>
 
-                    <p className="text-lg whitespace-nowrap">{product.price}</p>
+                    <p className="text-lg whitespace-nowrap">
+                      ₹{product.price}
+                    </p>
                   </div>
                 </div>
               </Link>

@@ -70,7 +70,7 @@ const Contact = () => {
                   href="mailto:preethi98287@gmail.com"
                   className="hover:text-[#b38b59] transition-all break-all"
                 >
-                  preethi98287@gmail.com
+                  preethizign@gmail.com
                 </a>
               </div>
             </div>
