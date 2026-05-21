@@ -51,12 +51,12 @@ const Contact = () => {
                 </p>
 
                 <a
-                  href="https://instagram.com/YOUR_USERNAME"
+                  href="https://instagram.com/preethizign"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#b38b59] transition-all"
                 >
-                  @YOUR_USERNAME
+                  @preethizign
                 </a>
               </div>
 
