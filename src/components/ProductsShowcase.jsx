@@ -20,10 +20,10 @@ const ProductsShowcase = () => {
   }, []);
 
   return (
-    <section className="py-14 sm:py-20 border-t border-[#e8dfd5]">
+    <section className="py-16 sm:py-20 border-t border-[#e8dfd5]">
       <Container>
         {/* Heading */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12 sm:mb-16">
           <p className="uppercase tracking-[5px] text-sm text-[#b59b82] mb-5">
             Best Sellers
           </p>
@@ -33,10 +33,28 @@ const ProductsShowcase = () => {
           </h2>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {/* MOBILE SCROLL / DESKTOP GRID */}
+        <div
+          className="
+            flex
+            gap-5
+            overflow-x-auto
+            snap-x
+            snap-mandatory
+            pb-2
+            scrollbar-hide
+
+            lg:grid
+            lg:grid-cols-4
+            lg:gap-8
+            lg:overflow-visible
+          "
+        >
           {products.map((product) => (
-            <div key={product.id} className="group">
+            <div
+              key={product.id}
+              className="group min-w-[78%] sm:min-w-[45%] lg:min-w-0 snap-start"
+            >
               <Link to={`/product/${product.id}`}>
                 {/* Image */}
                 <div className="overflow-hidden rounded-xl">
@@ -57,15 +75,14 @@ const ProductsShowcase = () => {
                 </div>
 
                 {/* Content */}
-                <div className="pt-5">
-                  <div className="flex items-start justify-between gap-4 mb-6">
+                <div className="pt-4 sm:pt-5">
+                  <div className="flex items-start justify-between gap-4 mb-4">
                     <h3
                       className="
-                        text-xl
+                        text-lg
                         sm:text-2xl
                         flex-1
                         leading-snug
-                        min-h-[56px] sm:min-h-[72px]
                         transition
                         duration-300
                         group-hover:text-[#b38b59]
@@ -74,7 +91,7 @@ const ProductsShowcase = () => {
                       {product.title}
                     </h3>
 
-                    <p className="text-lg whitespace-nowrap">
+                    <p className="text-base sm:text-lg whitespace-nowrap">
                       ₹{product.price}
                     </p>
                   </div>

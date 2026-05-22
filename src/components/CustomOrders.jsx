@@ -14,7 +14,7 @@ const CustomOrders = () => {
             Customizations Are Always Welcome ✨
           </h2>
 
-          <div className="space-y-6 text-gray-600 leading-9 text-lg">
+          <div className="space-y-6 text-gray-600 leading-9 text-md md:text-xl">
             <p>
               Please share a reference picture for custom orders. Every piece is
               handcrafted carefully to match your idea with warmth and

@@ -1,7 +1,7 @@
 const SectionTitle = ({ subtitle, title }) => {
   return (
-    <div className="mb-14">
-      <p className="uppercase tracking-[5px] text-sm text-[#b59b82] mb-4">
+    <div className="mb-8">
+      <p className="uppercase tracking-[4px] pl-[2px] text-sm text-[#b59b82] mb-4">
         {subtitle}
       </p>
 

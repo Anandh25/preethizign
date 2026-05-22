@@ -9,27 +9,56 @@ import Container from "./layout/Container";
 
 const FeaturedCollections = () => {
   return (
-    <section className="py-24 border-t border-[#e8dfd5]" id="collections">
+    <section
+      className="py-16 sm:py-20 lg:py-24 border-t border-[#e8dfd5]"
+      id="collections"
+    >
       <Container>
         <SectionTitle
           subtitle="Curated Collections"
           title="Handcrafted Pieces Designed For Modern Elegance"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          <CollectionCard image={img1} title="Keychains" category="Keychains" />
+        {/* MOBILE SCROLL / DESKTOP GRID */}
+        <div
+          className="
+            flex
+            gap-5
+            overflow-x-auto
+            snap-x
+            snap-mandatory
+            pb-2
+            scrollbar-hide
 
-          <CollectionCard
-            image={img2}
-            title="Desk Buddies"
-            category="Desk Buddies"
-          />
+            lg:grid
+            lg:grid-cols-3
+            lg:gap-10
+            lg:overflow-visible
+          "
+        >
+          <div className="min-w-[78%] sm:min-w-[48%] lg:min-w-0 snap-start">
+            <CollectionCard
+              image={img1}
+              title="Keychains"
+              category="Keychains"
+            />
+          </div>
 
-          <CollectionCard
-            image={img3}
-            title="Refrigerator Magnets"
-            category="Refrigerator Magnets"
-          />
+          <div className="min-w-[78%] sm:min-w-[48%] lg:min-w-0 snap-start">
+            <CollectionCard
+              image={img2}
+              title="Desk Buddies"
+              category="Desk Buddies"
+            />
+          </div>
+
+          <div className="min-w-[78%] sm:min-w-[48%] lg:min-w-0 snap-start">
+            <CollectionCard
+              image={img3}
+              title="Refrigerator Magnets"
+              category="Refrigerator Magnets"
+            />
+          </div>
         </div>
       </Container>
     </section>

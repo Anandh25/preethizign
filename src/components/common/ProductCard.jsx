@@ -16,16 +16,17 @@ const ProductCard = ({ product }) => {
       {/* IMAGE */}
       <Link
         to={`/product/${product.id}`}
-        className="overflow-hidden rounded-[24px] block relative"
+        className="overflow-hidden rounded-[20px] block relative"
       >
         <img
           src={product.image}
           alt={product.title}
           className="
             w-full
-            h-[420px]
+            aspect-square
+            sm:aspect-[4/5]
             object-cover
-            rounded-[24px]
+            rounded-[20px]
             transition-all
             duration-700
             group-hover:scale-105
@@ -37,14 +38,14 @@ const ProductCard = ({ product }) => {
           <span
             className="
               absolute
-              top-5
-              left-5
+              top-3
+              left-3
               bg-red-500
               text-white
-              px-4
-              py-2
+              px-3
+              py-1
               rounded-full
-              text-xs
+              text-[10px]
               uppercase
               tracking-[2px]
               z-10
@@ -56,14 +57,15 @@ const ProductCard = ({ product }) => {
       </Link>
 
       {/* CONTENT */}
-      <div className="pt-5 flex flex-col flex-1">
+      <div className="pt-4 flex flex-col flex-1">
         {/* TITLE + PRICE */}
-        <div className="flex justify-between items-start gap-4">
+        <div className="flex flex-col gap-2">
           <Link to={`/product/${product.id}`}>
             <h3
               className="
-                text-[34px]
-                leading-[1.2]
+                text-lg
+                sm:text-2xl
+                leading-snug
                 hover:text-[#b38b59]
                 transition-all
                 duration-300
@@ -74,12 +76,12 @@ const ProductCard = ({ product }) => {
             </h3>
           </Link>
 
-          <p className="text-2xl whitespace-nowrap">₹{product.price}</p>
+          <p className="text-lg sm:text-xl font-medium">₹{product.price}</p>
         </div>
 
         {/* CATEGORY */}
-        <div className="mt-5 mb-8 flex items-center gap-3 flex-wrap">
-          <p className="uppercase tracking-[4px] text-sm text-[#b59b82]">
+        <div className="mt-3 mb-5 flex flex-col sm:flex-row sm:items-center gap-2 flex-wrap">
+          <p className="uppercase tracking-[3px] text-[11px] text-[#b59b82]">
             {product.category}
           </p>
 
@@ -88,7 +90,7 @@ const ProductCard = ({ product }) => {
             <span
               className="
                 text-green-600
-                text-xs
+                text-[10px]
                 uppercase
                 tracking-[2px]
               "
@@ -99,7 +101,7 @@ const ProductCard = ({ product }) => {
             <span
               className="
                 text-red-500
-                text-xs
+                text-[10px]
                 uppercase
                 tracking-[2px]
               "
