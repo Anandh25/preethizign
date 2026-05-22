@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
+
 import { useNavigate } from "react-router-dom";
 
 import { signOut } from "firebase/auth";
@@ -187,18 +189,30 @@ const AdminDashboard = () => {
   return (
     <section className="min-h-screen bg-[#f8f5f2] p-4 sm:p-6 lg:p-10">
       {/* HEADER */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mb-10">
+      <div className="flex items-center justify-between mb-6">
         <div>
-          <p className="uppercase tracking-[4px] text-sm text-[#b59b82] mb-3">
-            PREETHIZIGN ADMIN
+          <p className="uppercase tracking-[3px] text-[10px] sm:text-sm text-[#b59b82] mb-1">
+            ADMIN
           </p>
 
-          <h1 className="text-4xl sm:text-5xl">Dashboard</h1>
+          <h1 className="text-2xl sm:text-5xl leading-none">Dashboard</h1>
         </div>
 
         <button
           onClick={handleLogout}
-          className="bg-black text-white px-7 py-4 rounded-2xl hover:bg-[#b38b59] transition duration-300 cursor-pointer w-full sm:w-fit"
+          className="
+    bg-black
+    text-white
+    px-3
+    py-2
+    rounded-xl
+    text-xs
+    hover:bg-[#b38b59]
+    transition
+    duration-300
+    cursor-pointer
+    whitespace-nowrap
+  "
         >
           Logout
         </button>
@@ -206,7 +220,7 @@ const AdminDashboard = () => {
 
       {/* PRODUCTS SECTION */}
       <div className="border border-[#efe7de] rounded-[35px] p-5 sm:p-7 lg:p-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mb-10">
+        <div className="flex items-center justify-between mb-6">
           <h2 className="text-3xl sm:text-4xl">Products</h2>
 
           <button
@@ -215,9 +229,21 @@ const AdminDashboard = () => {
 
               setShowAddForm(true);
             }}
-            className="bg-black text-white px-6 py-4 rounded-2xl hover:bg-[#b38b59] transition duration-300 cursor-pointer w-full sm:w-fit"
+            className="
+              bg-black
+              text-white
+              px-3
+              py-2
+              rounded-xl
+              text-sm
+              hover:bg-[#b38b59]
+              transition
+              duration-300
+              cursor-pointer
+              whitespace-nowrap
+            "
           >
-            + Add Product
+            +
           </button>
         </div>
 
@@ -254,16 +280,16 @@ const AdminDashboard = () => {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 className="
-w-full
-border
-border-[#e5ddd3]
-px-5
-py-4
-rounded-xl
-outline-none
-bg-white
-text-sm
-"
+                  w-full
+                  border
+                  border-[#e5ddd3]
+                  px-5
+                  py-4
+                  rounded-xl
+                  outline-none
+                  bg-white
+                  text-sm
+                "
                 required
               >
                 <option value="">Select Category</option>
@@ -346,19 +372,19 @@ text-sm
                 type="submit"
                 disabled={uploadingImage}
                 className="
-bg-black
-text-white
-px-8
-py-4
-rounded-2xl
-hover:bg-[#b38b59]
-transition
-duration-300
-cursor-pointer
-disabled:opacity-50
-w-full
-sm:w-auto
-"
+                  bg-black
+                  text-white
+                  px-8
+                  py-4
+                  rounded-2xl
+                  hover:bg-[#b38b59]
+                  transition
+                  duration-300
+                  cursor-pointer
+                  disabled:opacity-50
+                  w-full
+                  sm:w-auto
+                "
               >
                 {uploadingImage
                   ? "Uploading..."
@@ -371,19 +397,19 @@ sm:w-auto
                 type="button"
                 onClick={resetForm}
                 className="
-border
-border-black
-px-8
-py-4
-rounded-2xl
-hover:bg-black
-hover:text-white
-transition
-duration-300
-cursor-pointer
-w-full
-sm:w-auto
-"
+                  border
+                  border-black
+                  px-8
+                  py-4
+                  rounded-2xl
+                  hover:bg-black
+                  hover:text-white
+                  transition
+                  duration-300
+                  cursor-pointer
+                  w-full
+                  sm:w-auto
+                "
               >
                 Cancel
               </button>
@@ -392,34 +418,36 @@ sm:w-auto
         )}
 
         {/* PRODUCTS GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {products.map((product) => (
             <div
               key={product.id}
-              className="bg-white
-border
-border-[#efe7de]
-rounded-[30px]
-overflow-hidden
-shadow-sm
-hover:shadow-md
-transition-all
-duration-300"
+              className="
+                bg-white
+                border
+                border-[#efe7de]
+                rounded-[24px]
+                overflow-hidden
+                shadow-sm
+                hover:shadow-md
+                transition-all
+                duration-300
+              "
             >
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-[170px] sm:h-[260px] object-cover"
+                className="w-full h-[140px] sm:h-[260px] lg:h-[320px] object-cover"
               />
 
-              <div className="p-5 sm:p-6">
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <p className="uppercase tracking-[4px] text-xs text-[#b59b82]">
+              <div className="p-3 sm:p-5">
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <p className="uppercase tracking-[2px] text-[10px] sm:text-xs text-[#b59b82]">
                     {product.category}
                   </p>
 
                   <span
-                    className={`text-xs px-3 py-1 rounded-full whitespace-nowrap ${
+                    className={`text-[10px] sm:text-xs px-2 py-1 rounded-full whitespace-nowrap ${
                       product.inStock
                         ? "bg-green-100 text-green-700"
                         : "bg-red-100 text-red-700"
@@ -428,27 +456,55 @@ duration-300"
                     {product.inStock ? "Available" : "Sold Out"}
                   </span>
                 </div>
-
-                <h3 className="text-lg sm:text-3xl leading-tight break-words mb-3">
+                <h3 className="text-lg sm:text-3xl leading-snug break-words mb-3">
                   {product.title}
                 </h3>
 
-                <p className="text-lg sm:text-2xl mb-4">₹{product.price}</p>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-lg sm:text-2xl">₹{product.price}</p>
 
-                <div className="flex flex-wrap items-center gap-3">
-                  <button
-                    onClick={() => handleEdit(product)}
-                    className="border border-black px-5 py-3 rounded-2xl hover:bg-black hover:text-white transition duration-300 cursor-pointer"
-                  >
-                    Edit
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => handleEdit(product)}
+                      className="
+        w-9
+        h-9
+        rounded-xl
+        border
+        border-black
+        flex
+        items-center
+        justify-center
+        hover:bg-black
+        hover:text-white
+        transition
+        duration-300
+        cursor-pointer
+      "
+                    >
+                      <FiEdit2 size={15} />
+                    </button>
 
-                  <button
-                    onClick={() => handleDelete(product.id)}
-                    className="bg-red-500 text-white px-5 py-3 rounded-2xl hover:bg-red-600 transition duration-300 cursor-pointer"
-                  >
-                    Delete
-                  </button>
+                    <button
+                      onClick={() => handleDelete(product.id)}
+                      className="
+        w-9
+        h-9
+        rounded-xl
+        bg-red-500
+        text-white
+        flex
+        items-center
+        justify-center
+        hover:bg-red-600
+        transition
+        duration-300
+        cursor-pointer
+      "
+                    >
+                      <FiTrash2 size={15} />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
