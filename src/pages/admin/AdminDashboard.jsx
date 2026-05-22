@@ -392,7 +392,7 @@ sm:w-auto
         )}
 
         {/* PRODUCTS GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {products.map((product) => (
             <div
               key={product.id}
@@ -409,7 +409,7 @@ duration-300"
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-[260px] sm:h-[320px] object-cover"
+                className="w-full h-[170px] sm:h-[260px] object-cover"
               />
 
               <div className="p-5 sm:p-6">
@@ -429,11 +429,11 @@ duration-300"
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-4xl leading-tight break-words mb-4">
+                <h3 className="text-lg sm:text-3xl leading-tight break-words mb-3">
                   {product.title}
                 </h3>
 
-                <p className="text-2xl sm:text-3xl mb-6">₹{product.price}</p>
+                <p className="text-lg sm:text-2xl mb-4">₹{product.price}</p>
 
                 <div className="flex flex-wrap items-center gap-3">
                   <button
