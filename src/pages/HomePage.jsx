@@ -5,7 +5,7 @@ import FeaturedCollections from "../components/FeaturedCollections";
 import CustomOrders from "../components/CustomOrders";
 import Testimonials from "../components/Testimonials";
 import ProductsShowcase from "../components/ProductsShowcase";
-
+import FAQ from "../components/FAQ";
 const HomePage = () => {
   return (
     <>
@@ -15,6 +15,7 @@ const HomePage = () => {
       <CustomOrders />
       <Testimonials />
       <ProductsShowcase />
+      <FAQ />
     </>
   );
 };

@@ -13,24 +13,24 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
           {/* LEFT */}
           <div>
-            <p className="uppercase tracking-[4px] text-sm text-[#b59b82] mb-5">
+            <p className="uppercase tracking-[3px] text-[10px] sm:text-sm text-[#b59b82] mb-4">
               Contact
             </p>
 
-            <h1 className="text-5xl lg:text-7xl leading-tight mb-10">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl leading-tight mb-6 sm:mb-10">
               Get In Touch
             </h1>
 
-            <p className="text-lg leading-loose text-[#4d5b73] mb-12">
+            <p className="text-[13px] sm:text-base leading-7 sm:leading-8 text-[#4d5b73] mb-8 sm:mb-12 max-w-md">
               For custom orders, collaborations, or handmade gift inquiries,
               feel free to connect through WhatsApp or Instagram. Every clay
               creation is handmade with love and care.
             </p>
 
-            <div className="space-y-8 text-lg">
+            <div className="space-y-6 text-[13px] sm:text-base">
               {/* WHATSAPP */}
               <div>
-                <p className="uppercase tracking-[3px] text-sm text-[#b59b82] mb-2">
+                <p className="uppercase tracking-[3px] text-[10px] sm:text-sm text-[#b59b82] mb-2">
                   WhatsApp
                 </p>
 
@@ -46,7 +46,7 @@ const Contact = () => {
 
               {/* INSTAGRAM */}
               <div>
-                <p className="uppercase tracking-[3px] text-sm text-[#b59b82] mb-2">
+                <p className="uppercase tracking-[3px] text-[10px] sm:text-sm text-[#b59b82] mb-2">
                   Instagram
                 </p>
 
@@ -62,12 +62,12 @@ const Contact = () => {
 
               {/* EMAIL */}
               <div>
-                <p className="uppercase tracking-[3px] text-sm text-[#b59b82] mb-2">
+                <p className="uppercase tracking-[3px] text-[10px] sm:text-sm text-[#b59b82] mb-2">
                   Mail
                 </p>
 
                 <a
-                  href="mailto:preethi98287@gmail.com"
+                  href="mailto:preethizign@gmail.com"
                   className="hover:text-[#b38b59] transition-all break-all"
                 >
                   preethizign@gmail.com
